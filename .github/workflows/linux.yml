@@ -14,6 +14,10 @@ jobs:
     - uses: actions/checkout@v2
 
     # Error Check
+    - name: Install stow
+      run: |
+        apt-get install stow 
+        
     - name: make deploy
       run: make deploy
 
