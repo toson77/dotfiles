@@ -32,10 +32,10 @@ jobs:
       run: shellcheck ${GITHUB_WORKSPACE}/bin/install.sh
 
     - name: Check .zprofile
-      run: shellcheck ${GITHUB_WORKSPACE}/zshrc --exclude=SC2148,SC1090
+      run: shellcheck ${GITHUB_WORKSPACE}/zsh/.profile --exclude=SC2148,SC1090
 
     - name: Check .zshrc
-      run: shellcheck ${GITHUB_WORKSPACE}/zshrc --exclude=SC2148,SC1090
+      run: shellcheck ${GITHUB_WORKSPACE}/zsh/.zshrc --exclude=SC2148,SC1090
 
     - name: Check nvim/init.vim
       run: vint ${GITHUB_WORKSPACE}/nvim/*.vim -cstV --enable-neovim
