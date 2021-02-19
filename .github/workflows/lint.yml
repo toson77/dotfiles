@@ -32,7 +32,7 @@ jobs:
       run: shellcheck ${GITHUB_WORKSPACE}/bin/install.sh
 
     - name: Check .zprofile
-      run: shellcheck ${GITHUB_WORKSPACE}/zsh/.profile --exclude=SC2148,SC1090
+      run: shellcheck ${GITHUB_WORKSPACE}/zsh/.zprofile --exclude=SC2148,SC1090
 
     - name: Check .zshrc
       run: shellcheck ${GITHUB_WORKSPACE}/zsh/.zshrc --exclude=SC2148,SC1090
