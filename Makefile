@@ -1,4 +1,4 @@
-TFILES_EXCLUDES 	:= .DS_Store .git .gitmodules .travis.yml
+TFILES_EXCLUDES 	:= .DS_Store .git .gitmodules .travis.yml .github
 DOTFILES_TARGET   := $(wildcard .??*)
 DOTFILES_DIR      := $(PWD)
 DOTFILES_FILES    := $(filter-out $(DOTFILES_EXCLUDES), $(DOTFILES_TARGET))
