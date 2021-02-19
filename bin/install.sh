@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # symlink
-ln -sf ~/init.vim ~/.config/nvim/init.vim
 
 # vimplug install
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
@@ -20,7 +19,7 @@ sudo npm install -g n
 sudo n lts
 sudo apt purge nodejs npm
 
-#install python3 pyenv 
+#install python3 pyenv
 sudo apt update
 sudo apt install git gcc make zlib1g-dev libffi-dev libbz2-dev libssl-dev libreadline-dev libsqlite3-dev python3-tk tk-dev
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
