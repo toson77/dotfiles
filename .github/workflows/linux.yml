@@ -16,8 +16,8 @@ jobs:
     # Error Check
     - name: Install stow
       run: |
-        apt-get install stow 
-        
+        sudo apt-get install stow 
+
     - name: make deploy
       run: make deploy
 
