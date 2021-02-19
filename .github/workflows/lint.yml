@@ -28,8 +28,8 @@ jobs:
         pip install --upgrade pip
         pip install vim-vint
     # Lint check
-    - name: Check bin/init.sh
-      run: shellcheck ${GITHUB_WORKSPACE}/bin/init.sh
+    - name: Check bin/install.sh
+      run: shellcheck ${GITHUB_WORKSPACE}/bin/install.sh
 
     - name: Check .zprofile
       run: shellcheck ${GITHUB_WORKSPACE}/zshrc --exclude=SC2148,SC1090
