@@ -1,4 +1,4 @@
-TFILES_EXCLUDES 	:= .DS_Store .git .gitmodules .travis.yml .github
+DOTFILES_EXCLUDES 	:= .github .gitmodules .git
 DOTFILES_TARGET   := $(wildcard .??*)
 DOTFILES_DIR      := $(PWD)
 DOTFILES_FILES    := $(filter-out $(DOTFILES_EXCLUDES), $(DOTFILES_TARGET))
@@ -14,4 +14,3 @@ deploy:
 	@zsh
 init:
 	@$(foreach val, $(wildcard ./bin/*.sh), bash $(val);)
-
