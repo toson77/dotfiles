@@ -36,27 +36,26 @@ nmap <C-e> :NERDTreeToggle<CR>
 " majutsushi/tagbar
 nmap <F8> :TagbarToggle<CR>
 
-"cooperation between tmux and nvim
-"フォーカスしていない時の背景色(23を好きな値・色に変更)
+" cooperation between tmux and nvim
+" background color when not in focus
 let g:InactiveBackGround = 'guibg=#3f4551'
-"
-""Neovim内でフォーカスしていないペインの背景色設定
+
+" pain color when not in focus
 execute ('hi NormalNC '.g:InactiveBackGround)
 execute ('hi NontextNC '.g:InactiveBackGround)
 execute ('hi SpecialkeyNC '.g:InactiveBackGround)
 execute ('hi EndOfBufferNC '.g:InactiveBackGround)
 
-"Neovim自体からフォーカスを外したりした際の切替設定
-""(フォーカスした時の設定はcolorschemeに合わせて変更）
+" focus switching setting
 augroup ChangeBackGround
 	autocmd!
-	" フォーカスした時(colorscheme準拠に切替)
-	autocmd FocusGained * hi Normal guibg='#282c34' " :hi Normalで取得した値
-	autocmd FocusGained * hi NonText guibg='#282c34' " :hi NonTextで取得した値
-	autocmd FocusGained * hi SpecialKey guibg='#282c34' " :hi
-	" SpecialKeyで取得した値
+	" when focus
+	autocmd FocusGained * hi Normal guibg='#282c34'
+	autocmd FocusGained * hi NonText guibg='#282c34'
+	autocmd FocusGained * hi SpecialKey guibg='#282c34'
+	" SpecialKey
 	autocmd FocusGained * hi EndOfBuffer ctermbg=none
-	" " フォーカスを外した時（フォーカスしていない時の背景色に切替)
+	" when not focus
 	autocmd FocusLost * execute('hi Normal '.g:InactiveBackGround)
 	autocmd FocusLost * execute('hi NonText '.g:InactiveBackGround)
 	autocmd FocusLost * execute('hi SpecialKey '.g:InactiveBackGround)

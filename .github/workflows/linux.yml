@@ -19,13 +19,3 @@ jobs:
 
     - name: make init
       run: make init
-
-    - name: Load .zprofile
-      run: |
-        zsh ~/.zprofile 2> error.log; cat error.log
-        if [ -s error.log ]; then false; fi
-
-    - name: Load .zshrc
-      run: |
-        zsh ~/.zshrc 2> error.log; cat error.log
-        if [ -s error.log ]; then false; fi
