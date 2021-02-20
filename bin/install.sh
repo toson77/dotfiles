@@ -27,6 +27,11 @@ sudo apt install git gcc make zlib1g-dev libffi-dev libbz2-dev libssl-dev librea
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 git clone https://github.com/pyenv/pyenv-update.git ~/.pyenv/plugins/pyenv-update
 
+#install pynvim
+pyenv install 3.7.4
+pyenv shell neovim3
+pip install pynvim
+
 #install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install cargo-edit
