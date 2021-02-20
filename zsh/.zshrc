@@ -25,8 +25,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 # rust
  export PATH="$HOME/.cargo/bin:$PATH"
- # xserver
- export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
-
+# xserver
+ DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
+ export DISPLAY
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
