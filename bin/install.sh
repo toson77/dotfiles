@@ -19,7 +19,7 @@ sudo apt install nodejs -y
 sudo apt install npm -y
 sudo npm install -g n
 sudo n lts
-sudo apt purge nodejs npm
+sudo apt purge nodejs npm -y
 
 #install python3 pyenv
 sudo apt update
