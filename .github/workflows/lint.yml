@@ -32,14 +32,6 @@ jobs:
       if: always()
       run: shellcheck ${GITHUB_WORKSPACE}/bin/install.sh
 
-    - name: Check .zprofile
-      if: always()
-      run: shellcheck ${GITHUB_WORKSPACE}/zsh/.zprofile --exclude=SC2148,SC1090,SC1072,SC1073 source=/dev/null
-
-    - name: Check .zshrc
-      if: always()
-      run: shellcheck ${GITHUB_WORKSPACE}/zsh/.zshrc --exclude=SC2148,SC1090,SC1072,SC1073 source=/dev/null
-
     - name: Check nvim/init.vim
       if: always()
       run: vint ${GITHUB_WORKSPACE}/nvim/*.vim -cstV --enable-neovim
