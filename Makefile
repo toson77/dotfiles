@@ -11,7 +11,6 @@ deploy:
 	@$(foreach val, $(DOTFILES_FILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 	@$(foreach val, $(NVIM_DIR), ln -sfnv $(abspath $(val)) $(HOME)/.config/$(val);)
 	@stow -v zsh tmux
-	@chsh -s $(shell which zsh)
 	@zsh
 init:
 	@$(foreach val, $(wildcard ./bin/*.sh), bash $(val);)
