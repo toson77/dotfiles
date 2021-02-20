@@ -1,5 +1,5 @@
 # dotfiles
-![](https://github.com/toson77/dotfiles/workflows/linux/badge.svg)
+![](https://github.com/toson77/dotfiles/workflows/ubuntu/badge.svg)
 ![](https://github.com/toson77/dotfiles/workflows/lint/badge.svg)
 
 ## Require
