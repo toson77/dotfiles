@@ -15,7 +15,7 @@ jobs:
 
     # Error Check
     - name: make deploy
-      run: make deploy
+      run: sudo make deploy
 
     - name: make init
-      run: make init
+      run: sudo make init
