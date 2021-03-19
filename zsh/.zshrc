@@ -32,3 +32,5 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # no beep
  setopt no_beep
+# xserver
+  export DISPLAY=:0.0

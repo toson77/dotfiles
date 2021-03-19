@@ -2,7 +2,7 @@ DOTFILES_EXCLUDES 	:= .github .gitmodules .git
 DOTFILES_TARGET   := $(wildcard .??*)
 DOTFILES_DIR      := $(PWD)
 DOTFILES_FILES    := $(filter-out $(DOTFILES_EXCLUDES), $(DOTFILES_TARGET))
-NVIM_DIR          := nvim
+CONFIG_DIR        := nvim alacritty
 deploy:
 	mkdir -p ~/.config
 	apt-get update && apt-get upgrade -y
@@ -21,8 +21,8 @@ deploy-manjaro:
 	yay -S ttf-hackgen
 	git submodule update --init --recursive
 	$(foreach val, $(DOTFILES_FILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
-	$(foreach val, $(NVIM_DIR), ln -sfnv $(abspath $(val)) $(HOME)/.config/$(val);)
-	
+	$(foreach val, $(CONFIG_DIR), ln -sfnv $(abspath $(val)) $(HOME)/.config/$(val);)
+
 	stow -v zsh tmux
 	zsh
 
