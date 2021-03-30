@@ -1,5 +1,8 @@
 set number
 set termguicolors
+set tabstop=4
+set encoding=utf-8
+set fileencodings=iso-2022-jp,enc-jp,sjis,utf-8
 call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
@@ -21,6 +24,21 @@ call plug#end()
 
 " jj same to Esc
 inoremap <silent> jj <ESC>
+" coc.nvim enable <TAB> <S-TAB> <CR>
+inoremap <silent><expr> <TAB>
+								\ pumvisible() ? "\<C-n>" :
+								\ <SID>check_back_space() ? "\<TAB>" :
+								\ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1] =~# '/s'
+endfunction
+
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" NERDTree quit on open
+let g:NERDTreeQuitOnOpen = 1
 " auto rustfmt when save
 let g:rustfmt_autosave = 1
 
