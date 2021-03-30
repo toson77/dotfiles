@@ -19,6 +19,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
+" jj same to Esc
+inoremap <silent> jj <ESC>
 " auto rustfmt when save
 let g:rustfmt_autosave = 1
 
