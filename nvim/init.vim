@@ -23,6 +23,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Shirk/vim-gas'
 call plug#end()
 
+" jj same to Esc
+inoremap <silent> jj <ESC>
 " coc.nvim enable <TAB> <S-TAB> <CR>
 inoremap <silent><expr> <TAB>
 		\ pumvisible() ? "\<C-n>" :
