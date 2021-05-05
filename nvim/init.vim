@@ -3,8 +3,11 @@ set termguicolors
 set tabstop=4
 set encoding=utf-8
 set fileencodings=iso-2022-jp,enc-jp,sjis,utf-8
+augroup nasm_syntax
 "nasm syntax enable .nas
+autocmd!
 autocmd BufNewFile,BufRead *.nas setfiletype nasm
+augroup end
 call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
