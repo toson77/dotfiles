@@ -32,7 +32,6 @@ export PATH="$HOME/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_
  export DISPLAY
 # no beep
  setopt no_beep
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # DON'T WRITE BELOW
