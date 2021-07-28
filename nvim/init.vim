@@ -29,6 +29,7 @@ Plug 'dense-analysis/ale'
 Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Shirk/vim-gas'
+Plug 'fatih/vim-go'
 call plug#end()
 
 " jj same to Esc
