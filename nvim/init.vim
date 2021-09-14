@@ -3,7 +3,7 @@ set termguicolors
 set tabstop=4
 set shiftwidth=4
 set encoding=utf-8
-set fileencodings=iso-2022-jp,enc-jp,sjis,utf-8
+set fileencodings=utf-8,iso-2022-jp,enc-jp,sjis
 
 "nasm syntax enable .nas
 augroup nasm_syntax
@@ -18,7 +18,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle'}
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': '.install --all'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-fugitive'
@@ -30,6 +30,9 @@ Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Shirk/vim-gas'
 Plug 'fatih/vim-go'
+Plug 'tpope/vim-surround'
+Plug 'alvan/vim-closetag'
+Plug 'cohama/lexima.vim'
 call plug#end()
 
 " jj same to Esc
@@ -46,6 +49,9 @@ function! s:check_back_space() abort
 endfunction
 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" lexima enable auto close parentheses
+let g:lexima_enable_basic_rules = 1
 
 " NERDTree quit on open
 let g:NERDTreeQuitOnOpen = 1

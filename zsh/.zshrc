@@ -29,7 +29,6 @@ fi
 export PATH="$HOME/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin:$PATH"
 # go
 export PATH="$GOPATH/bin:$PATH"
-let g:go_fmt_command = "goimports"
 # xserver
  DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
  export DISPLAY
