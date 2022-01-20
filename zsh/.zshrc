@@ -29,11 +29,13 @@ fi
 export PATH="$HOME/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin:$PATH"
 # go
 export PATH="$GOPATH/bin:$PATH"
-# xserver
- DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
- export DISPLAY
+# ghcup
+#[ -f "/home/toson/.ghcup/env"] && source "/home/toson/.ghcup/env"
+
 # no beep
  setopt no_beep
+# alius
+alias sao='nvim $(fzf)'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # DON'T WRITE BELOW
