@@ -36,6 +36,7 @@ export PATH="$GOPATH/bin:$PATH"
  setopt no_beep
 # alius
 alias sao='nvim $(fzf)'
+alias ide="~/dotfiles/scripts/ide.sh"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # DON'T WRITE BELOW
