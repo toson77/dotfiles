@@ -28,8 +28,9 @@ fi
 # clangd path
 export PATH="$HOME/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin:$PATH"
 # xserver
- DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
- export DISPLAY
+ export DISPLAY=:0.0
+# ghidra
+ export GHIDRA_INSTALL_DIR="$HOME/Desktop/ghidra_10.0.1_PUBLIC"
 # no beep
  setopt no_beep
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
