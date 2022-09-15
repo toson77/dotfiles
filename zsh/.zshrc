@@ -24,13 +24,15 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 # poetry
-export PATH="$HOME/.poetry/env:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
 # rust
  export PATH="$HOME/.cargo/bin:$PATH"
 # clangd path
 export PATH="$HOME/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin:$PATH"
 # go
 export PATH="$GOPATH/bin:$PATH"
+# pip install path
+export PATH="$HOME/.local/bin:$PATH"
 # ghcup
 #[ -f "/home/toson/.ghcup/env"] && source "/home/toson/.ghcup/env"
 
@@ -39,6 +41,7 @@ export PATH="$GOPATH/bin:$PATH"
 # alius
 alias sao='nvim $(fzf)'
 alias ide="~/dotfiles/scripts/ide.sh"
+alias upcd='(){source ~/dotfiles/scripts/upcd.sh $1}'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # DON'T WRITE BELOW
