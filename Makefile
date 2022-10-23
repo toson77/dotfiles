@@ -14,10 +14,9 @@ deploy:
 	zsh
 deploy-manjaro:
 	mkdir -p ~/.config
-	sudo pacman-mirrors --geoip
-	pacman -Syy --noconfirm
-	pacman -Syu --noconfirm
-	pacman -S yay cmake gcc patch automake autoconf stow zsh tmux neovim --noconfirm
+	sudo pacman -Syy --noconfirm
+	sudo pacman -Syu --noconfirm
+	sudo pacman -S cmake gcc patch automake autoconf stow zsh tmux neovim --noconfirm
 	yay -S ttf-hackgen
 	fc-cache -f
 	git submodule update --init --recursive
@@ -32,4 +31,3 @@ init:
 
 .SILENT: deploy init deploy-manjaro
 .PHONY: deploy init deploy-manjaro
-

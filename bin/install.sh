@@ -39,4 +39,4 @@ cargo install cargo-watch
 cargo install evcxr_repl
 
 #install haskell
-apt-get install haskell-platform -y
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
