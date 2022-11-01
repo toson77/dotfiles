@@ -36,7 +36,7 @@ Plug 'cohama/lexima.vim'
 call plug#end()
 
 " jj same to Esc
-inoremap <silent> jj <ESC>
+inoremap <silent> jk <ESC>
 " coc.nvim enable <TAB> <S-TAB> <CR>
 inoremap <silent><expr> <TAB>
 		\ pumvisible() ? "\<C-n>" :
@@ -78,6 +78,20 @@ nmap <C-e> :NERDTreeToggle<CR>
 
 " majutsushi/tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" fzf settings
+let $FZF_DEFAULT_OPTS="--layout=reverse"
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
+
+let mapleader = "\<Space>"
+
+" fzf
+nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>g :GFiles<CR>
+nnoremap <silent> <leader>G :GFiles?<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>h :History<CR>
+nnoremap <silent> <leader>r :Rg<CR>
 
 " cooperation between tmux and nvim
 " background color when not in focus
