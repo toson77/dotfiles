@@ -35,8 +35,8 @@ Plug 'alvan/vim-closetag'
 Plug 'cohama/lexima.vim'
 call plug#end()
 
-" jj same to Esc
-inoremap <silent> jj <ESC>
+" jk same to Esc
+inoremap <silent> jk <ESC>
 " coc.nvim enable <TAB> <S-TAB> <CR>
 inoremap <silent><expr> <TAB>
 		\ pumvisible() ? "\<C-n>" :
@@ -63,6 +63,8 @@ let g:rustfmt_autosave = 1
 colorscheme onedark
 "airblade/vim-gitgutter
 set updatetime=100
+" set clipboard
+set clipboard=unnamed
 
 " itchyny/lightline.vim
 let g:lightline = {'colorscheme' : 'onedark'}
