@@ -37,6 +37,13 @@ export PATH="$GOPATH/bin:$PATH"
 # alius
 alias sao='nvim $(fzf)'
 alias ide="~/dotfiles/scripts/ide.sh"
+alias g="git"
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # DON'T WRITE BELOW

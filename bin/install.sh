@@ -7,7 +7,7 @@ perl -p -i.bak -e 's%https?://(?!security)[^ \t]+%http://jp.archive.ubuntu.com/u
 # vimplug install
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-sudo apt install ripgrep
+sudo apt install ripgrep fzf
 
 #package install
 sudo apt-get update
