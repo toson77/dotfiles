@@ -35,20 +35,38 @@ Plug 'alvan/vim-closetag'
 Plug 'cohama/lexima.vim'
 call plug#end()
 
-" jj same to Esc
+" jk same to Esc
 inoremap <silent> jk <ESC>
 " coc.nvim enable <TAB> <S-TAB> <CR>
 inoremap <silent><expr> <TAB>
-		\ pumvisible() ? "\<C-n>" :
-		\ <SID>check_back_space() ? "\<TAB>" :
+		\ coc#pum#visible() ? coc#pum#next(1):
+		\ CheckBackspace() ? "\<TAB>" :
 		\ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-function! s:check_back_space() abort
+
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) "<C-h>"
+
+function! CheckBackspace() abort
 	let col = col('.') - 1
 	return !col || getline('.')[col - 1] =~# '\s'
 endfunction
 
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" fzf settings
+let $FZF_DEFAULT_OPTS="--layout=reverse"
+let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
+
+let mapleader = "\<Space>"
+
+" fzf
+nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>g :GFiles<CR>
+nnoremap <silent> <leader>G :GFiles?<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>h :History<CR>
+nnoremap <silent> <leader>r :Rg<CR>
 
 " coc.nvim GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -72,6 +90,12 @@ let g:rustfmt_autosave = 1
 colorscheme onedark
 "airblade/vim-gitgutter
 set updatetime=100
+
+" terminal mode
+tnoremap <Esc> <C-\><C-n>
+command! -nargs=* T split | wincmd j | resize 20 | terminal <args>
+autocmd TermOpen * startinsert
+
 
 " itchyny/lightline.vim
 let g:lightline = {'colorscheme' : 'onedark'}
