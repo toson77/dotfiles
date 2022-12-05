@@ -27,11 +27,10 @@ fi
  export PATH="$HOME/.cargo/bin:$PATH"
 # clangd path
 export PATH="$HOME/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin:$PATH"
-# go
-export PATH="$GOPATH/bin:$PATH"
-# ghcup
-#[ -f "/home/toson/.ghcup/env"] && source "/home/toson/.ghcup/env"
-
+# xserver
+ export DISPLAY=:0.0
+# ghidra
+ export GHIDRA_INSTALL_DIR="$HOME/Desktop/ghidra_10.0.1_PUBLIC"
 # no beep
  setopt no_beep
 # alius

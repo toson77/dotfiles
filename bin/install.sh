@@ -38,6 +38,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install cargo-edit
 cargo install cargo-watch
 cargo install evcxr_repl
+cargo install ripgrep
 
 #install haskell
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
