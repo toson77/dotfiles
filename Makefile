@@ -5,16 +5,16 @@ DOTFILES_FILES    := $(filter-out $(DOTFILES_EXCLUDES), $(DOTFILES_TARGET))
 CONFIG_DIR        := nvim alacritty
 deploy:
 	mkdir -p ~/.config
-	apt-get update && apt-get upgrade -y
-	apt-get install zsh tmux neovim stow curl -y
+	sudo apt-get update && sudo apt-get upgrade -y
+	sudo apt-get install zsh tmux neovim stow curl -y
 	git submodule update --init --recursive
 	$(foreach val, $(DOTFILES_FILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
-	$(foreach val, $(NVIM_DIR), ln -sfnv $(abspath $(val)) $(HOME)/.config/$(val);)
+	$(foreach val, $(CONFIG_DIR), ln -sfnv $(abspath $(val)) $(HOME)/.config/$(val);)
 	stow -v zsh tmux
 	zsh
 deploy-manjaro:
 	mkdir -p ~/.config
-	pacman-mirrors --geoip
+	sudo pacman-mirrors --geoip
 	pacman -Syy --noconfirm
 	pacman -Syu --noconfirm
 	pacman -S yay cmake gcc patch automake autoconf stow zsh tmux neovim --noconfirm
