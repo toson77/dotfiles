@@ -37,7 +37,10 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/riscv/bin:$PATH"
 # ghcup
 #[ -f "/home/toson/.ghcup/env"] && source "/home/toson/.ghcup/env"
-
+# xserver
+ export DISPLAY=:0.0
+# ghidra
+ export GHIDRA_INSTALL_DIR="$HOME/Desktop/ghidra_10.0.1_PUBLIC"
 # no beep
  setopt no_beep
 # alius
