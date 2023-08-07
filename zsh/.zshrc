@@ -33,6 +33,8 @@ export PATH="$HOME/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_
 export PATH="$GOPATH/bin:$PATH"
 # pip install path
 export PATH="$HOME/.local/bin:$PATH"
+# risc-v toolchain
+export PATH="/opt/riscv/bin:$PATH"
 # ghcup
 #[ -f "/home/toson/.ghcup/env"] && source "/home/toson/.ghcup/env"
 
@@ -42,6 +44,9 @@ export PATH="$HOME/.local/bin:$PATH"
 alias sao='nvim $(fzf)'
 alias ide="~/dotfiles/scripts/ide.sh"
 alias upcd='(){source ~/dotfiles/scripts/upcd.sh $1}'
+source ~/enhancd/init.sh
+export ENHANCD_FILTER="fzf --height 40%:fzy:$ENHANCD_FILTER"
+#alias zd='(){source ~/dotfiles/scripts/extra.sh $1}'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # DON'T WRITE BELOW
