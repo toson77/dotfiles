@@ -44,6 +44,7 @@ export PATH="/opt/riscv/bin:$PATH"
 alias sao='nvim $(fzf)'
 alias ide="~/dotfiles/scripts/ide.sh"
 alias upcd='(){source ~/dotfiles/scripts/upcd.sh $1}'
+alias scd='$(find $(pwd) -type d | fzf)'
 source ~/enhancd/init.sh
 export ENHANCD_FILTER="fzf --height 40%:fzy:$ENHANCD_FILTER"
 #alias zd='(){source ~/dotfiles/scripts/extra.sh $1}'
