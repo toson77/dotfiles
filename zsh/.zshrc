@@ -18,11 +18,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
 # poetry
 export PATH="$HOME/.poetry/bin:$PATH"
 # rust
@@ -43,6 +38,12 @@ export PATH="/opt/riscv/bin:$PATH"
  export GHIDRA_INSTALL_DIR="$HOME/Desktop/ghidra_10.0.1_PUBLIC"
 # no beep
  setopt no_beep
+# openjdk
+ export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/shims:$PATH"
+eval "$(pyenv init -)"
 # alius
 alias sao='nvim $(fzf)'
 alias ide="~/dotfiles/scripts/ide.sh"
